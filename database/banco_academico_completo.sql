@@ -68,9 +68,10 @@ FROM clientes
 -- ==========================================
 -- TABLA DE MOVIMIENTOS BANCARIOS - FASE 2
 -- ==========================================
+
 CREATE TABLE IF NOT EXISTS movimientos (
-    id_movimiento INT AUTO_INCREMENT PRIMARY KEY,
-    tipo_movimiento ENUM('Deposito', 'Retiro', 'Transferencia') NOT NULL,
+                                           id_movimiento INT AUTO_INCREMENT PRIMARY KEY,
+                                           tipo_movimiento ENUM('Deposito', 'Retiro', 'Transferencia') NOT NULL,
     monto DECIMAL(12,2) NOT NULL,
     fecha_movimiento DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     descripcion VARCHAR(200),
@@ -90,11 +91,11 @@ CREATE TABLE IF NOT EXISTS movimientos (
 
     CONSTRAINT chk_mov_destino
     CHECK (
-        (tipo_movimiento = 'Transferencia'
-          AND id_cuenta_destino IS NOT NULL
-          AND id_cuenta_destino <> id_cuenta)
+(tipo_movimiento = 'Transferencia'
+ AND id_cuenta_destino IS NOT NULL
+ AND id_cuenta_destino <> id_cuenta)
     OR
-    (tipo_movimiento IN ('Deposito', 'Retiro')
+(tipo_movimiento IN ('Deposito', 'Retiro')
     AND id_cuenta_destino IS NULL)
-          )
+    )
     );
