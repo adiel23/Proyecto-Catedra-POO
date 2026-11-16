@@ -1,8 +1,13 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 public class Conexion {
+
+    private static final Logger logger = LogManager.getLogger(Conexion.class);
 
     private static final String URL =  "jdbc:mysql://localhost:3306/banco_academico";
     private static final String USUARIO = "root";
@@ -13,14 +18,13 @@ public class Conexion {
         try {
             Connection conexion = DriverManager.getConnection(URL, USUARIO, CONTRASENA);
 
-            System.out.println("¡conexion exitosa con MySQL!");
+            logger.info("Conexión exitosa con MySQL.");
 
             return conexion;
 
         } catch (SQLException e) {
 
-            System.out.println("Error al conectar con MySQL:" + e.getMessage());
-
+            logger.error("Error al conectar con MySQL: {}", e.getMessage(), e);
             return null;
         }
 
