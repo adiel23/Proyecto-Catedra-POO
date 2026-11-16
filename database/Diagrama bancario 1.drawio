@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Página-1" id="WYn4YcXfFc_8PA1LWixg">
+    <mxGraphModel dx="1170" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="290" width="320" x="190" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="CLIENTES" vertex="1">
+          <mxGeometry height="30" width="60" x="310" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-6" edge="1" parent="1" source="hPLUjZzGGqDn5DeCCMEJ-2" style="endArrow=none;html=1;rounded=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;curved=1;exitX=0.097;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="170" y="790" as="sourcePoint" />
+            <mxPoint x="220" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PK" vertex="1">
+          <mxGeometry height="30" width="60" x="180" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-8" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="id_cliente&amp;nbsp; INT AUTO_INCREMENT&lt;div&gt;&lt;br&gt;&lt;div&gt;codigo_cliente VARCHAR(20)&amp;nbsp; NOT NULL&amp;nbsp; UNIQUE&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;dui&amp;nbsp; VARCHAR(10)&amp;nbsp; NOT&amp;nbsp; NULL&amp;nbsp; UNIQUE&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;nombre_completo&amp;nbsp; VARCHAR(100)&amp;nbsp; NOT NULL&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;telefono&amp;nbsp; VARCHAR(15)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;correo_electronico&amp;nbsp; VARCHAR(100)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;direccion&amp;nbsp; VARCHAR(150)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;estado ENUM NOT NULL DEFAULT &#39;Activo&#39;,&amp;nbsp; &#39;Inactivo&#39;,&amp;nbsp; &#39;Bloqueado&#39;)&amp;nbsp;&amp;nbsp;NOT NULL DEFAULT &#39;Activo&#39;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="290" x="220" y="840" as="geometry" />
+        </mxCell>
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-12" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="" vertex="1">
+          <mxGeometry height="250" width="330" x="630" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-13" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;curved=1;entryX=0.99;entryY=0.158;entryDx=0;entryDy=0;entryPerimeter=0;" target="hPLUjZzGGqDn5DeCCMEJ-12" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="630" y="730" as="sourcePoint" />
+            <mxPoint x="680" y="680" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-14" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="CUENTAS_BANCARIAS" vertex="1">
+          <mxGeometry height="30" width="60" x="750" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-15" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;curved=1;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="650" y="941" as="sourcePoint" />
+            <mxPoint x="650" y="730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-16" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="PK" vertex="1">
+          <mxGeometry height="30" width="60" x="610" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-17" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="id_cuenta&amp;nbsp; &amp;nbsp;INT AUTO_INCREMENT&lt;div&gt;&lt;br&gt;&lt;div&gt;numero_cuenta&amp;nbsp; VARCHAR(20)&amp;nbsp; NOT NULL UNIQUE&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;tipo_cuenta&amp;nbsp; ENUM (&#39;Ahorro&#39;, &#39;Corriente&#39;)&amp;nbsp; NOT NULL&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;saldo DESIMAL (12,2) NOT NULL DEFAULT 0.00&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;estado ENUM &#39;Activa&#39;,&amp;nbsp; &#39;Inactiva&#39;,&amp;nbsp; &#39;Bloqueada&#39;) NOT NULL DEFAULT&amp;nbsp; &quot;Activa&quot;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;id_cliente&amp;nbsp; INT NOT NULL&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="290" x="660" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-18" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="FK" vertex="1">
+          <mxGeometry height="30" width="60" x="610" y="890" as="geometry" />
+        </mxCell>
+        <mxCell id="hPLUjZzGGqDn5DeCCMEJ-22" edge="1" parent="1" source="hPLUjZzGGqDn5DeCCMEJ-2" style="endArrow=none;html=1;rounded=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;curved=1;exitX=0.006;exitY=0.111;exitDx=0;exitDy=0;exitPerimeter=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="460" y="770" as="sourcePoint" />
+            <mxPoint x="510" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOHW1Ik_ug8CZocwHwRM-1" edge="1" parent="1" source="hPLUjZzGGqDn5DeCCMEJ-2" style="endArrow=none;html=1;rounded=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;curved=1;exitX=1.01;exitY=0.078;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.014;entryY=0.09;entryDx=0;entryDy=0;entryPerimeter=0;" target="hPLUjZzGGqDn5DeCCMEJ-12" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="830" as="sourcePoint" />
+            <mxPoint x="626.04" y="710.59" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JOHW1Ik_ug8CZocwHwRM-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="1" vertex="1">
+          <mxGeometry height="30" width="40" x="510" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="JOHW1Ik_ug8CZocwHwRM-9" edge="1" parent="1" source="JOHW1Ik_ug8CZocwHwRM-3" style="edgeStyle=none;curved=1;rounded=0;curveGeometry=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.001;entryY=0.09;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=12;defaultLabelBackgroundColor=page;startSize=8;endSize=8;" target="hPLUjZzGGqDn5DeCCMEJ-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="JOHW1Ik_ug8CZocwHwRM-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="N" vertex="1">
+          <mxGeometry height="30" width="60" x="570" y="690" as="geometry" />
+        </mxCell>
+        <mxCell id="JOHW1Ik_ug8CZocwHwRM-11" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=16;" value="MODELO RELACIONAL-SISTEMA DE GESTION BANCARIA" vertex="1">
+          <mxGeometry height="30" width="510" x="345" y="620" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

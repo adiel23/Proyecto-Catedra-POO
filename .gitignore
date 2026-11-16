@@ -1,10 +1,11 @@
-# Compilados de Java
+# Archivos compilados de Java
 *.class
 bin/
 out/
+build/
 target/
 
-# IDEs
+# Configuración de IDE
 .idea/
 *.iml
 .vscode/
@@ -12,7 +13,12 @@ target/
 .project
 .classpath
 
-# Logs y SO
+# Archivos de registro
 *.log
+
+# Archivos del sistema
 .DS_Store
 Thumbs.db
+
+# Archivos locales de configuración
+.env
