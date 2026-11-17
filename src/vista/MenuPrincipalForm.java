@@ -95,5 +95,24 @@ public class MenuPrincipalForm extends JFrame {
         lblPie.setForeground(Color.GRAY);
         lblPie.setBounds(0, 345, 520, 20);
         add(lblPie);
+
+        // En el constructor de MenuPrincipalForm:
+        setSize(520, 480);
+
+        // ... dentro de inicializarComponentes(), debajo de btnCuentas:
+        JButton btnReportes = new JButton("📊  Consultas y Reportes");
+        btnReportes.setFont(new Font("Segoe UI", Font.BOLD, 14));
+        btnReportes.setBounds(80, 230, 350, 45);
+        btnReportes.setFocusPainted(false);
+        btnReportes.addActionListener(e -> {
+            ReportesForm form = new ReportesForm();
+            form.setVisible(true);
+        });
+        add(btnReportes);
+
+        // Ajusta la posición Y de los botones inferiores:
+        btnProbarConexion.setBounds(80, 290, 350, 40);
+        btnSalir.setBounds(200, 345, 110, 32);
+        lblPie.setBounds(0, 405, 520, 20);
     }
 }
