@@ -2,6 +2,8 @@ package dao;
 
 import conexion.Conexion;
 import modelo.Cliente;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteDAO {
+
+    private static final Logger logger = LogManager.getLogger(ClienteDAO.class);
 
     public boolean insertar(Cliente cliente) throws SQLException {
         String sql = "INSERT INTO clientes (codigo_cliente, dui, nombre_completo, telefono, correo_electronico, direccion, estado) " +
@@ -36,9 +40,13 @@ public class ClienteDAO {
                             cliente.setIdCliente(rs.getInt(1));
                         }
                     }
+                    logger.info("Cliente registrado: {} ({})", cliente.getCodigoCliente(), cliente.getNombreCompleto());
                     return true;
                 }
             }
+        } catch (SQLException e) {
+            logger.error("Error al registrar cliente '{}': {}", cliente.getCodigoCliente(), e.getMessage());
+            throw e;
         }
         return false;
     }
@@ -60,8 +68,15 @@ public class ClienteDAO {
                 ps.setString(7, cliente.getCodigoCliente());
                 ps.setInt(8, cliente.getIdCliente());
 
-                return ps.executeUpdate() > 0;
+                boolean actualizado = ps.executeUpdate() > 0;
+                if (actualizado) {
+                    logger.info("Cliente actualizado: {} (ID={})", cliente.getCodigoCliente(), cliente.getIdCliente());
+                }
+                return actualizado;
             }
+        } catch (SQLException e) {
+            logger.error("Error al actualizar cliente '{}': {}", cliente.getCodigoCliente(), e.getMessage());
+            throw e;
         }
     }
 
@@ -73,8 +88,15 @@ public class ClienteDAO {
 
             try (PreparedStatement ps = con.prepareStatement(sql)) {
                 ps.setInt(1, idCliente);
-                return ps.executeUpdate() > 0;
+                boolean eliminado = ps.executeUpdate() > 0;
+                if (eliminado) {
+                    logger.info("Cliente eliminado (ID={})", idCliente);
+                }
+                return eliminado;
             }
+        } catch (SQLException e) {
+            logger.error("Error al eliminar cliente ID={}: {}", idCliente, e.getMessage());
+            throw e;
         }
     }
 

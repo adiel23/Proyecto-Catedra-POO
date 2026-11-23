@@ -2,6 +2,8 @@ package dao;
 
 import conexion.Conexion;
 import modelo.CuentaBancaria;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CuentaBancariaDAO {
+
+    private static final Logger logger = LogManager.getLogger(CuentaBancariaDAO.class);
 
     public boolean insertar(CuentaBancaria cuenta) throws SQLException {
         String sql = "INSERT INTO cuentas_bancarias (numero_cuenta, tipo_cuenta, saldo, estado, id_cliente) " +
@@ -34,9 +38,14 @@ public class CuentaBancariaDAO {
                             cuenta.setIdCuenta(rs.getInt(1));
                         }
                     }
+                    logger.info("Cuenta bancaria registrada: {} (Tipo={}, Saldo=${})",
+                            cuenta.getNumeroCuenta(), cuenta.getTipoCuenta(), String.format("%.2f", cuenta.getSaldo()));
                     return true;
                 }
             }
+        } catch (SQLException e) {
+            logger.error("Error al registrar cuenta '{}': {}", cuenta.getNumeroCuenta(), e.getMessage());
+            throw e;
         }
         return false;
     }
@@ -55,8 +64,16 @@ public class CuentaBancariaDAO {
                 ps.setString(4, cuenta.getNumeroCuenta());
                 ps.setInt(5, cuenta.getIdCuenta());
 
-                return ps.executeUpdate() > 0;
+                boolean actualizado = ps.executeUpdate() > 0;
+                if (actualizado) {
+                    logger.info("Cuenta bancaria actualizada: {} (Estado={})",
+                            cuenta.getNumeroCuenta(), cuenta.getEstadoCuenta());
+                }
+                return actualizado;
             }
+        } catch (SQLException e) {
+            logger.error("Error al actualizar cuenta '{}': {}", cuenta.getNumeroCuenta(), e.getMessage());
+            throw e;
         }
     }
 
@@ -68,8 +85,15 @@ public class CuentaBancariaDAO {
 
             try (PreparedStatement ps = con.prepareStatement(sql)) {
                 ps.setInt(1, idCuenta);
-                return ps.executeUpdate() > 0;
+                boolean eliminado = ps.executeUpdate() > 0;
+                if (eliminado) {
+                    logger.info("Cuenta bancaria eliminada (ID={})", idCuenta);
+                }
+                return eliminado;
             }
+        } catch (SQLException e) {
+            logger.error("Error al eliminar cuenta ID={}: {}", idCuenta, e.getMessage());
+            throw e;
         }
     }
 

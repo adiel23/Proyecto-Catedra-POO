@@ -1,5 +1,7 @@
 package excepciones;
 
+import java.math.BigDecimal;
+
 public class ValidadorBanco {
 
     // Validar que los textos obligatorios no vayan vacíos ni nulos
@@ -47,6 +49,38 @@ public class ValidadorBanco {
     public static void validarSaldoInicial(double saldo) throws ValidacionBancariaException {
         if (saldo < 0) {
             throw new ValidacionBancariaException("El saldo inicial no puede ser un monto negativo.");
+        }
+    }
+
+    /**
+     * Valida que el texto ingresado represente un monto numérico válido y estrictamente mayor que cero.
+     */
+    public static BigDecimal validarMontoPositivo(String montoTexto) throws ValidacionBancariaException {
+        validarTextoObligatorio(montoTexto, "Monto");
+        try {
+            BigDecimal monto = new BigDecimal(montoTexto.trim());
+            if (monto.compareTo(BigDecimal.ZERO) <= 0) {
+                throw new ValidacionBancariaException("El monto debe ser mayor que cero.");
+            }
+            return monto;
+        } catch (NumberFormatException ex) {
+            throw new ValidacionBancariaException("El monto debe ser un valor numérico válido.", ex);
+        }
+    }
+
+    /**
+     * Valida que el texto ingresado represente un identificador numérico entero positivo de movimiento.
+     */
+    public static int validarIdMovimiento(String idTexto) throws ValidacionBancariaException {
+        validarTextoObligatorio(idTexto, "ID de Movimiento");
+        try {
+            int id = Integer.parseInt(idTexto.trim());
+            if (id <= 0) {
+                throw new ValidacionBancariaException("El ID de movimiento debe ser mayor que cero.");
+            }
+            return id;
+        } catch (NumberFormatException ex) {
+            throw new ValidacionBancariaException("El ID de movimiento debe ser un número entero válido.", ex);
         }
     }
 }
