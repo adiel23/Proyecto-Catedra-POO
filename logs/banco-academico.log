@@ -1,0 +1,137 @@
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  ClienteDAO - Cliente registrado: CL002 (Carlos Eduardo Mendoza)
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  ClienteDAO - Cliente registrado: CL003 (María José López)
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  CuentaBancariaDAO - Cuenta bancaria registrada: 10000001 (Tipo=Ahorro, Saldo=$500.00)
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  CuentaBancariaDAO - Cuenta bancaria registrada: 10000002 (Tipo=Corriente, Saldo=$250.00)
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  CuentaBancariaDAO - Cuenta bancaria registrada: 10000003 (Tipo=Ahorro, Saldo=$100.00)
+2026-11-22 19:31:28 INFO  TransaccionDAO - Inicio Deposito | cuenta=10000001 | monto=200.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  TransaccionDAO - Deposito exitoso | idMov=7 | cuenta=10000001 | saldo nuevo=700.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 WARN  TransaccionDAO - Deposito rechazado: monto inválido (0).
+2026-11-22 19:31:28 INFO  TransaccionDAO - Inicio Deposito | cuenta=99999999 | monto=50.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 WARN  TransaccionDAO - Deposito rechazado | cuenta=99999999 | motivo=La cuenta '99999999' no existe.
+2026-11-22 19:31:28 INFO  TransaccionDAO - Inicio Deposito | cuenta=10000003 | monto=50.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 WARN  TransaccionDAO - Deposito rechazado | cuenta=10000003 | motivo=La cuenta '10000003' no está activa (estado actual: Bloqueada).
+2026-11-22 19:31:28 INFO  TransaccionDAO - Inicio Retiro | cuenta=10000001 | monto=75.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  TransaccionDAO - Retiro exitoso | idMov=8 | cuenta=10000001 | saldo nuevo=625.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  TransaccionDAO - Inicio Retiro | cuenta=10000001 | monto=99999.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 WARN  TransaccionDAO - Retiro rechazado | cuenta=10000001 | motivo=Saldo insuficiente en la cuenta '10000001'. Disponible: $625.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  TransaccionDAO - Inicio Retiro | cuenta=10000003 | monto=10.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 WARN  TransaccionDAO - Retiro rechazado | cuenta=10000003 | motivo=La cuenta '10000003' no está activa (estado actual: Bloqueada).
+2026-11-22 19:31:28 INFO  TransaccionDAO - Inicio Transferencia | origen=10000001 | destino=10000002 | monto=150.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  TransaccionDAO - Transferencia exitosa | idMov=9 | origen=10000001 (saldo=475.00) | destino=10000002 (saldo=400.00) | monto=150.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 WARN  TransaccionDAO - Transferencia rechazada: cuenta origen y destino iguales (10000001).
+2026-11-22 19:31:28 INFO  TransaccionDAO - Inicio Transferencia | origen=10000001 | destino=10000002 | monto=5000.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 WARN  TransaccionDAO - Transferencia rechazada | origen=10000001 | destino=10000002 | motivo=Saldo insuficiente en la cuenta origen '10000001'. Disponible: $475.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  TransaccionDAO - Inicio Transferencia | origen=10000001 | destino=10000003 | monto=20.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 WARN  TransaccionDAO - Transferencia rechazada | origen=10000001 | destino=10000003 | motivo=La cuenta destino '10000003' no está activa (estado actual: Bloqueada).
+2026-11-22 19:31:28 INFO  TransaccionDAO - Inicio Transferencia | origen=10000001 | destino=99999999 | monto=20.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 WARN  TransaccionDAO - Transferencia rechazada | origen=10000001 | destino=99999999 | motivo=La cuenta destino '99999999' no existe.
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  TransaccionDAO - Consulta de movimiento ID 9 exitosa (Tipo: Transferencia).
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 WARN  TransaccionDAO - Consulta de movimiento ID 999999: no encontrado.
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  TransaccionDAO - Historial de movimientos consultado (cuenta='*', tipo='Todos', registros=3).
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  TransaccionDAO - Historial de movimientos consultado (cuenta='10000002', tipo='Transferencia', registros=1).
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  ReporteDAO - Reporte generado: Cuentas con estado 'Activa' (Registros: 3).
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  ReporteDAO - Reporte generado: Cuentas con estado 'Bloqueada' (Registros: 1).
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  ReporteDAO - Reporte generado: Clientes registrados (Total: 3).
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  ReporteDAO - Reporte generado: Historial general de transacciones (Registros: 3).
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  ReporteDAO - Reporte generado: Transacciones para la cuenta '10000001' (Registros: 3).
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  ReporteDAO - Total calculado para 'DEPOSITO': $200.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  ReporteDAO - Total calculado para 'RETIRO': $75.00
+2026-11-22 19:31:28 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:28 INFO  ReporteDAO - Total calculado para 'TRANSFERENCIA': $150.00
+2026-11-22 19:31:28 INFO  MenuPrincipalForm - Menú principal iniciado correctamente.
+2026-11-22 19:31:29 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:29 INFO  TransaccionDAO - Historial de movimientos consultado (cuenta='*', tipo='Todos', registros=3).
+2026-11-22 19:31:29 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:30 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:30 INFO  TransaccionDAO - Historial de movimientos consultado (cuenta='*', tipo='Todos', registros=3).
+2026-11-22 19:31:30 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:30 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:30 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:30 INFO  TransaccionDAO - Historial de movimientos consultado (cuenta='*', tipo='Todos', registros=3).
+2026-11-22 19:31:30 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:30 INFO  TransaccionDAO - Consulta de movimiento ID 9 exitosa (Tipo: Transferencia).
+2026-11-22 19:31:30 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:30 INFO  TransaccionDAO - Historial de movimientos consultado (cuenta='*', tipo='Todos', registros=3).
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Total calculado para 'DEPOSITO': $200.00
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Total calculado para 'RETIRO': $75.00
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Total calculado para 'TRANSFERENCIA': $150.00
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Reporte generado: Cuentas con estado 'Activa' (Registros: 3).
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Total calculado para 'DEPOSITO': $200.00
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Total calculado para 'RETIRO': $75.00
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Total calculado para 'TRANSFERENCIA': $150.00
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Reporte generado: Cuentas con estado 'Activa' (Registros: 3).
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Reporte generado: Cuentas con estado 'Bloqueada' (Registros: 1).
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Total calculado para 'DEPOSITO': $200.00
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Total calculado para 'RETIRO': $75.00
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Total calculado para 'TRANSFERENCIA': $150.00
+2026-11-22 19:31:31 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:31 INFO  ReporteDAO - Reporte generado: Cuentas con estado 'Activa' (Registros: 3).
+2026-11-22 19:31:32 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:32 INFO  ReporteDAO - Reporte generado: Historial general de transacciones (Registros: 3).
+2026-11-22 19:31:32 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:32 INFO  ReporteDAO - Total calculado para 'DEPOSITO': $200.00
+2026-11-22 19:31:32 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:32 INFO  ReporteDAO - Total calculado para 'RETIRO': $75.00
+2026-11-22 19:31:32 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:32 INFO  ReporteDAO - Total calculado para 'TRANSFERENCIA': $150.00
+2026-11-22 19:31:32 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:32 INFO  ReporteDAO - Reporte generado: Cuentas con estado 'Activa' (Registros: 3).
+2026-11-22 19:31:32 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:32 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:31:32 INFO  ReporteDAO - Reporte generado: Transacciones para la cuenta '10000001' (Registros: 3).
+2026-11-22 19:44:06 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:44:06 INFO  ReporteDAO - Total calculado para 'DEPOSITO': $200.00
+2026-11-22 19:44:06 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:44:06 INFO  ReporteDAO - Total calculado para 'RETIRO': $75.00
+2026-11-22 19:44:06 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:44:06 INFO  ReporteDAO - Total calculado para 'TRANSFERENCIA': $150.00
+2026-11-22 19:44:06 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:44:06 INFO  ReporteDAO - Reporte generado: Cuentas con estado 'Activa' (Registros: 3).
+2026-11-22 19:44:06 INFO  Conexion - Conexión exitosa con la base de datos banco_academico.
+2026-11-22 19:44:06 INFO  ReporteDAO - Reporte generado: Clientes registrados (Total: 3).

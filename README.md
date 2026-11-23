@@ -16,8 +16,12 @@ Proyecto-Catedra-POO/
 ├── Proyecto-Catedra-POO.iml
 ├── database/
 │   ├── banco_academico_completo.sql          # Script SQL completo (clientes, cuentas y movimientos)
-│   ├── Diagrama bancario 1.drawio            # Diagrama entidad-relación editable
-│   └── Diagrama bancario 1.drawio.png        # Imagen del diagrama ER
+│   ├── diagrama_clases_fase2.png             # Diagrama de clases UML actualizado (Fase 2)
+│   ├── modelo_relacional_fase2.png           # Modelo relacional actualizado (Fase 2)
+│   ├── Diagrama bancario 1.drawio            # Diagrama entidad-relación base editable
+│   └── Diagrama bancario 1.drawio.png        # Imagen base de Fase 1
+├── docs/
+│   └── FASE2_Documento_Tecnico_POO901.pdf    # Documento técnico completo exportado (Fase 2)
 ├── lib/
 │   ├── mysql-connector-j-8.3.0.jar           # Conector JDBC para MySQL
 │   ├── log4j-api-2.26.1.jar                  # API de Apache Log4j 2
