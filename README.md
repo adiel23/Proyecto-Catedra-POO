@@ -56,6 +56,20 @@ Proyecto-Catedra-POO/
         ├── CuentaBancariaForm.java           # Ventana de gestión de Cuentas Bancarias
         ├── TransaccionesForm.java            # Ventana de Depósitos, Retiros, Transferencias e Historial
         └── ReportesForm.java                 # Ventana de Reportes y Totales en tiempo real
+├── web/                                      # Capa de Interfaz Web (Fase 3 - Tomcat 10.1.x)
+│   ├── css/
+│   │   └── styles.css                        # Estilos responsivos y tema bancario institucional
+│   ├── js/
+│   │   └── main.js                           # Validaciones cliente, formateo (DUI, teléfono) y confirmaciones
+│   ├── index.jsp                             # Enrutador principal según sesión/rol
+│   ├── login.jsp                             # Pantalla de inicio de sesión con selección de rol
+│   ├── WEB-INF/
+│   │   └── web.xml                           # Descriptor de despliegue Jakarta EE 10 (Servlet 6.0)
+│   └── jsp/
+│       ├── common/                           # Plantillas modulares (navbar, footer, alerts, error 404/500)
+│       ├── admin/                            # Dashboard, CRUD Clientes, Cuentas y Reportes
+│       ├── cajero/                           # Dashboard, Depósitos, Retiros y Transferencias
+│       └── cliente/                          # Portal del Cliente (Mis Cuentas, Movimientos y Transferencias)
 ```
 
 ---
