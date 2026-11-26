@@ -68,9 +68,9 @@
                                         <td><strong style="color: var(--success-color);">$ <%= String.format("%.2f", c.getSaldo()) %></strong></td>
                                         <td>Cliente #<%= c.getIdCliente() %></td>
                                         <td>
-                                            <% if ("Activa".equalsIgnoreCase(c.getEstado())) { %>
+                                            <% if ("Activa".equalsIgnoreCase(c.getEstadoCuenta())) { %>
                                                 <span class="badge badge-active">Activa</span>
-                                            <% } else if ("Inactiva".equalsIgnoreCase(c.getEstado())) { %>
+                                            <% } else if ("Inactiva".equalsIgnoreCase(c.getEstadoCuenta())) { %>
                                                 <span class="badge badge-inactive">Inactiva</span>
                                             <% } else { %>
                                                 <span class="badge badge-blocked">Bloqueada</span>

@@ -148,8 +148,8 @@
                                             <td><%= cb.getTipoCuenta() %></td>
                                             <td><strong style="color: var(--success-color);">$ <%= String.format("%.2f", cb.getSaldo()) %></strong></td>
                                             <td>
-                                                <span class="badge <%= "Activa".equalsIgnoreCase(cb.getEstado()) ? "badge-active" : "badge-blocked" %>">
-                                                    <%= cb.getEstado() %>
+                                                <span class="badge <%= "Activa".equalsIgnoreCase(cb.getEstadoCuenta()) ? "badge-active" : "badge-blocked" %>">
+                                                    <%= cb.getEstadoCuenta() %>
                                                 </span>
                                             </td>
                                         </tr>

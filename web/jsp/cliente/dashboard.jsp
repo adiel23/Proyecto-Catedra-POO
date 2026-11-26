@@ -87,8 +87,8 @@
                                         <td><%= c.getTipoCuenta() %></td>
                                         <td><strong style="color: var(--success-color); font-size: 1.1rem;">$ <%= String.format("%.2f", c.getSaldo()) %></strong></td>
                                         <td>
-                                            <span class="badge <%= "Activa".equalsIgnoreCase(c.getEstado()) ? "badge-active" : "badge-blocked" %>">
-                                                <%= c.getEstado() %>
+                                            <span class="badge <%= "Activa".equalsIgnoreCase(c.getEstadoCuenta()) ? "badge-active" : "badge-blocked" %>">
+                                                <%= c.getEstadoCuenta() %>
                                             </span>
                                         </td>
                                         <td>
