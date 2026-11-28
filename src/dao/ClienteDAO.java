@@ -81,24 +81,30 @@ public class ClienteDAO {
     }
 
     public boolean eliminar(int idCliente) throws SQLException {
-        String sql = "DELETE FROM clientes WHERE id_cliente = ?";
+        String sql = "UPDATE clientes SET estado = 'Inactivo' WHERE id_cliente = ?";
 
         try (Connection con = Conexion.conectar()) {
-            if (con == null) throw new SQLException("No se pudo conectar a la base de datos.");
+            if (con == null) {
+                throw new SQLException("No se pudo conectar a la base de datos.");
+            }
 
             try (PreparedStatement ps = con.prepareStatement(sql)) {
                 ps.setInt(1, idCliente);
-                boolean eliminado = ps.executeUpdate() > 0;
-                if (eliminado) {
-                    logger.info("Cliente eliminado (ID={})", idCliente);
+
+                boolean actualizado = ps.executeUpdate() > 0;
+
+                if (actualizado) {
+                    logger.info("Cliente dado de baja (ID={})", idCliente);
                 }
-                return eliminado;
+
+                return actualizado;
             }
         } catch (SQLException e) {
-            logger.error("Error al eliminar cliente ID={}: {}", idCliente, e.getMessage());
+            logger.error("Error al dar de baja al cliente ID={}: {}", idCliente, e.getMessage());
             throw e;
         }
     }
+
 
     public List<Cliente> listarTodos() throws SQLException {
         List<Cliente> lista = new ArrayList<>();

@@ -78,21 +78,26 @@ public class CuentaBancariaDAO {
     }
 
     public boolean eliminar(int idCuenta) throws SQLException {
-        String sql = "DELETE FROM cuentas_bancarias WHERE id_cuenta = ?";
+        String sql = "UPDATE cuentas_bancarias SET estado = 'Inactiva' WHERE id_cuenta = ?";
 
         try (Connection con = Conexion.conectar()) {
-            if (con == null) throw new SQLException("No se pudo conectar a la base de datos.");
+            if (con == null) {
+                throw new SQLException("No se pudo conectar a la base de datos.");
+            }
 
             try (PreparedStatement ps = con.prepareStatement(sql)) {
                 ps.setInt(1, idCuenta);
-                boolean eliminado = ps.executeUpdate() > 0;
-                if (eliminado) {
-                    logger.info("Cuenta bancaria eliminada (ID={})", idCuenta);
+
+                boolean actualizado = ps.executeUpdate() > 0;
+
+                if (actualizado) {
+                    logger.info("Cuenta bancaria dada de baja (ID={})", idCuenta);
                 }
-                return eliminado;
+
+                return actualizado;
             }
         } catch (SQLException e) {
-            logger.error("Error al eliminar cuenta ID={}: {}", idCuenta, e.getMessage());
+            logger.error("Error al dar de baja la cuenta ID={}: {}", idCuenta, e.getMessage());
             throw e;
         }
     }
@@ -158,5 +163,31 @@ public class CuentaBancariaDAO {
             }
         }
         return null;
+    }
+//METODO PARA BLOQUEAR Y ACTIVAR CUENTAS//
+    public boolean cambiarEstado(int idCuenta, String estado) throws SQLException {
+        String sql = "UPDATE cuentas_bancarias SET estado = ? WHERE id_cuenta = ?";
+
+        try (Connection con = Conexion.conectar()) {
+            if (con == null) {
+                throw new SQLException("No se pudo conectar a la base de datos.");
+            }
+
+            try (PreparedStatement ps = con.prepareStatement(sql)) {
+                ps.setString(1, estado);
+                ps.setInt(2, idCuenta);
+
+                boolean actualizado = ps.executeUpdate() > 0;
+
+                if (actualizado) {
+                    logger.info("Estado de cuenta actualizado. ID={}, Estado={}", idCuenta, estado);
+                }
+
+                return actualizado;
+            }
+        } catch (SQLException e) {
+            logger.error("Error al cambiar estado de cuenta ID={}: {}", idCuenta, e.getMessage());
+            throw e;
+        }
     }
 }

@@ -28,7 +28,7 @@
                 <p>Apertura, consulta de saldos y control de estados (Activa, Inactiva, Bloqueada).</p>
             </div>
             <div>
-                <a href="<%= request.getContextPath() %>/jsp/admin/cuenta-form.jsp" class="btn btn-primary">
+                <a href="<%= request.getContextPath() %>/CuentaServlet?accion=nuevo" class="btn btn-primary">
                     + Nueva Cuenta
                 </a>
             </div>
@@ -53,7 +53,7 @@
                                 <th>Número de Cuenta</th>
                                 <th>Tipo</th>
                                 <th>Saldo ($)</th>
-                                <th>ID Titular</th>
+                                <th>Nombre del Titular</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
@@ -66,7 +66,7 @@
                                         <td><strong><%= c.getNumeroCuenta() %></strong></td>
                                         <td><%= c.getTipoCuenta() %></td>
                                         <td><strong style="color: var(--success-color);">$ <%= String.format("%.2f", c.getSaldo()) %></strong></td>
-                                        <td>Cliente #<%= c.getIdCliente() %></td>
+                                        <td><%= c.getNombreCliente() %></td>
                                         <td>
                                             <% if ("Activa".equalsIgnoreCase(c.getEstadoCuenta())) { %>
                                                 <span class="badge badge-active">Activa</span>
